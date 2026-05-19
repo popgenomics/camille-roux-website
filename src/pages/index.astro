@@ -9,7 +9,7 @@ import "../styles/global.css";
     <title>Camille Roux — Evolutionary Biology</title>
     <meta
       name="description"
-      content="Camille Roux, CNRS researcher at ISEM, working on speciation, reproductive barriers, population genomics, and demographic inference."
+      content="Camille Roux, CNRS researcher at ISEM: speciation, reproductive barriers, gene flow, comparative population genomics, and demographic inference."
     />
   </head>
 
@@ -37,6 +37,9 @@ import "../styles/global.css";
             <a href="#research" class="transition-colors hover:text-[var(--foreground)]"
               >Research</a
             >
+            <a href="#questions" class="transition-colors hover:text-[var(--foreground)]"
+              >Questions</a
+            >
             <a href="#work" class="transition-colors hover:text-[var(--foreground)]"
               >Selected work</a
             >
@@ -59,8 +62,8 @@ import "../styles/global.css";
             </p>
 
             <p class="mt-5 max-w-2xl text-base leading-7 text-[var(--muted)] md:text-lg">
-              My work combines population genomics, demographic inference, comparative
-              multi-species analyses, and method development.
+              My work combines population genomics, demographic inference, and comparative
+              analyses to understand how gene flow changes during speciation.
             </p>
           </div>
 
@@ -68,12 +71,51 @@ import "../styles/global.css";
             class="rounded-2xl border border-[var(--line)] bg-[var(--card)]/90 p-5 shadow-sm backdrop-blur-sm md:p-6 lg:translate-y-1"
           >
             <p class="text-sm uppercase tracking-[0.25em] text-[var(--ochre)]">
-              Current direction
+              Working themes
             </p>
-            <p class="mt-3 text-xl leading-snug md:text-[1.35rem]">
-              Why do some lineages accumulate reproductive barriers faster than others?
+            <p class="mt-3 text-sm leading-relaxed text-[var(--muted)]">
+              Tracing gene flow along the speciation continuum, comparing patterns across
+              lineages and clades, and developing inference tools—including
+              <span class="text-[var(--foreground)]">DILS</span>—to test demographic models
+              of divergence with gene flow.
             </p>
           </div>
+        </section>
+
+        <!-- Current questions -->
+        <section
+          id="questions"
+          class="scroll-mt-8 border-b border-[var(--line)] py-12 lg:py-16"
+        >
+          <h2 class="section-title">Current questions</h2>
+          <p class="section-intro mt-4 max-w-3xl">
+            A recent comparative analysis across hundreds of species pairs (<a
+              href="https://www.science.org/doi/abs/10.1126/science.adl2356"
+              class="text-[var(--green)] underline decoration-[var(--line)] underline-offset-4 transition-colors hover:decoration-[var(--green)]"
+              >Science, 2025</a
+            >) suggests that reproductive barriers accumulate faster in plants than in animals:
+            at comparable molecular divergence, plant lineages tend to be less genetically
+            connected. That finding is one anchor for current work—not the whole program, but
+            a starting point for asking which biological features accelerate or slow barrier
+            accumulation.
+          </p>
+
+          <ul class="mt-8 flex max-w-3xl flex-col gap-3.5" role="list">
+            <li class="question-line">
+              Why do lineages differ in the rate at which barriers to gene flow accumulate?
+            </li>
+            <li class="question-line">
+              How does genetic connectivity decline with molecular divergence?
+            </li>
+            <li class="question-line">
+              Which genomic compartments and biological features contribute to reproductive
+              isolation?
+            </li>
+            <li class="question-line">
+              Can population-scale estimates of reproductive isolation be compared across
+              clades?
+            </li>
+          </ul>
         </section>
 
         <!-- Research -->
@@ -81,10 +123,10 @@ import "../styles/global.css";
           <div class="lg:pr-12">
             <h2 class="section-title">Research</h2>
             <p class="section-intro mt-4">
-              I study the emergence of reproductive isolation between evolutionary lineages.
-              Most of my work starts from population genomic data, but the broader aim is
-              comparative: to understand why some groups accumulate barriers to gene flow
-              faster than others.
+              Most of my work starts from population genomic data and asks how gene flow
+              declines along the speciation continuum—from population pairs to diverged
+              lineages—and which demographic histories and genomic features shape that
+              transition.
             </p>
           </div>
 
@@ -96,9 +138,8 @@ import "../styles/global.css";
                 Speciation genomics
               </h3>
               <p class="mt-3 text-sm leading-6 text-[var(--muted)]">
-                I use genomic data to estimate how genetic connectivity decreases along the
-                continuum from populations to species, and to identify the demographic
-                histories that shape this transition.
+                Estimating genetic connectivity and reproductive isolation from genomic
+                data, including along the grey zone between populations and species.
               </p>
             </article>
 
@@ -109,9 +150,9 @@ import "../styles/global.css";
                 Methods and inference
               </h3>
               <p class="mt-3 text-sm leading-6 text-[var(--muted)]">
-                I develop and use statistical tools for demographic inference, especially
-                approximate Bayesian computation frameworks designed to compare alternative
-                models of divergence and gene flow.
+                Developing and applying ABC-based tools (including DILS) to compare
+                demographic models of divergence, estimate gene flow, and account for linked
+                selection.
               </p>
             </article>
 
@@ -122,53 +163,10 @@ import "../styles/global.css";
                 Comparative synthesis
               </h3>
               <p class="mt-3 text-sm leading-6 text-[var(--muted)]">
-                I am interested in large-scale comparisons across species pairs, clades, and
-                biological systems, with the aim of connecting population-scale processes to
-                broader evolutionary patterns.
+                Comparing species pairs and clades to learn whether—and why—reproductive
+                isolation accumulates at different rates across biological systems.
               </p>
             </article>
-          </div>
-        </section>
-
-        <!-- Current questions -->
-        <section class="border-b border-[var(--line)] py-12 lg:py-16">
-          <div class="grid gap-8 lg:grid-cols-[0.9fr_1.1fr] lg:gap-10">
-            <div>
-              <h2 class="section-title">Current questions</h2>
-              <p class="mt-4 max-w-xl text-base leading-7 text-[var(--muted)] md:text-[1.0625rem]">
-                A central question in my current work is why plants appear to establish
-                reproductive barriers faster than animals. This result emerged from a large
-                comparative analysis of genomic data across hundreds of species pairs and now
-                opens a broader research program: identifying the biological mechanisms that
-                accelerate or slow down the accumulation of barriers to gene flow.
-              </p>
-            </div>
-
-            <div class="flex flex-col gap-6">
-              <blockquote
-                class="border-l-2 border-[var(--ochre)] pl-5 text-lg font-medium leading-snug tracking-tight md:text-xl"
-              >
-                Can population-scale dynamics of reproductive isolation help explain
-                macroevolutionary differences in diversification?
-              </blockquote>
-
-              <ul class="flex flex-col gap-3.5" role="list">
-                <li class="question-line">
-                  How does gene flow decline with molecular divergence?
-                </li>
-                <li class="question-line">
-                  Which genomic compartments contribute to reproductive isolation?
-                </li>
-                <li class="question-line">
-                  Are plant-specific features, including cytoplasmic genomes, involved in
-                  faster barrier accumulation?
-                </li>
-                <li class="question-line">
-                  Can comparative population genomics provide quantitative links between
-                  microevolution and macroevolution?
-                </li>
-              </ul>
-            </div>
           </div>
         </section>
 
@@ -265,9 +263,9 @@ import "../styles/global.css";
             <div>
               <h2 class="section-title">Tools and approaches</h2>
               <p class="mt-4 max-w-md text-base leading-7 text-[var(--muted)]">
-                I like tools that make biological questions testable. Method development is
-                not separate from empirical work in my research; it is often the way to turn
-                vague evolutionary questions into measurable quantities.
+                Method development is part of how I work: tools such as DILS and ABC
+                frameworks turn comparative questions about gene flow and reproductive
+                isolation into quantities that can be estimated and compared across datasets.
               </p>
             </div>
 
@@ -297,34 +295,14 @@ import "../styles/global.css";
           </div>
         </section>
 
-        <!-- ERC direction -->
-        <section class="border-b border-[var(--line)] py-12 lg:py-16">
-          <div class="max-w-3xl lg:ml-auto lg:max-w-2xl lg:pr-4">
-            <p class="text-sm uppercase tracking-[0.25em] text-[var(--ochre)]">
-              ERC direction
-            </p>
-            <h2 class="section-title mt-3">
-              Toward a comparative theory of reproductive barrier accumulation
-            </h2>
-            <p class="mt-4 text-base leading-7 text-[var(--muted)]">
-              The ERC project I am preparing will build on comparative population genomics,
-              statistical modelling, and experimental perspectives to understand why
-              reproductive barriers accumulate faster in some lineages than in others. The aim
-              is not only to document patterns of gene flow, but to identify the biological
-              features that make the origin of species more or less likely.
-            </p>
-          </div>
-        </section>
-
         <!-- Scientific life -->
-        <section class="border-b border-[var(--line)] py-12 lg:py-16">
+        <section class="border-b border-[var(--line)] py-10 lg:py-12">
           <div class="max-w-2xl">
             <h2 class="section-title">Scientific life</h2>
             <p class="mt-4 text-base leading-7 text-[var(--muted)]">
-              I value collaborative scientific spaces: journal clubs, student discussions,
-              method-oriented workshops, and conferences designed for exchange rather than
-              display. My work has grown through collaborations across population genomics,
-              molecular evolution, phylogenetics, and comparative biology.
+              I work in collaborative settings—journal clubs, student discussions, and
+              method-oriented workshops—and across population genomics, molecular evolution,
+              phylogenetics, and comparative biology.
             </p>
           </div>
         </section>
