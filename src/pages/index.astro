@@ -1,17 +1,394 @@
 ---
-
+import "../styles/global.css";
 ---
 
 <html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<link rel="icon" href="/favicon.ico" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>Camille Roux — Evolutionary Biology</title>
+    <meta
+      name="description"
+      content="Camille Roux, CNRS researcher at ISEM, working on speciation, reproductive barriers, population genomics, and demographic inference."
+    />
+  </head>
+
+  <body>
+    <div class="page-motif" aria-hidden="true"></div>
+
+    <main class="page-content min-h-screen px-6 py-7 md:px-12 lg:px-20">
+      <div class="mx-auto flex max-w-6xl flex-col">
+        <!-- Header -->
+        <header
+          class="flex flex-col gap-4 border-b border-[var(--line)] pb-4 sm:flex-row sm:items-end sm:justify-between"
+        >
+          <div>
+            <p class="text-sm uppercase tracking-[0.25em] text-[var(--green)]">
+              CNRS · ISEM · Montpellier
+            </p>
+            <h1 class="mt-2 text-4xl font-semibold tracking-tight md:text-5xl">
+              Camille Roux
+            </h1>
+          </div>
+
+          <nav
+            class="flex flex-wrap gap-x-6 gap-y-2 text-sm text-[var(--muted)] md:justify-end"
+          >
+            <a href="#research" class="transition-colors hover:text-[var(--foreground)]"
+              >Research</a
+            >
+            <a href="#work" class="transition-colors hover:text-[var(--foreground)]"
+              >Selected work</a
+            >
+            <a href="#contact" class="transition-colors hover:text-[var(--foreground)]"
+              >Contact</a
+            >
+          </nav>
+        </header>
+
+        <!-- Hero -->
+        <section
+          class="grid gap-7 border-b border-[var(--line)] py-10 lg:grid-cols-[1.2fr_0.8fr] lg:items-end lg:py-14"
+        >
+          <div>
+            <p
+              class="max-w-3xl text-3xl font-medium leading-tight tracking-tight md:text-4xl lg:text-[2.65rem]"
+            >
+              I study how reproductive barriers emerge, accumulate, and shape the formation
+              of species.
+            </p>
+
+            <p class="mt-5 max-w-2xl text-base leading-7 text-[var(--muted)] md:text-lg">
+              My work combines population genomics, demographic inference, comparative
+              multi-species analyses, and method development.
+            </p>
+          </div>
+
+          <div
+            class="rounded-2xl border border-[var(--line)] bg-[var(--card)]/90 p-5 shadow-sm backdrop-blur-sm md:p-6 lg:translate-y-1"
+          >
+            <p class="text-sm uppercase tracking-[0.25em] text-[var(--ochre)]">
+              Current direction
+            </p>
+            <p class="mt-3 text-xl leading-snug md:text-[1.35rem]">
+              Why do some lineages accumulate reproductive barriers faster than others?
+            </p>
+          </div>
+        </section>
+
+        <!-- Research -->
+        <section id="research" class="scroll-mt-8 border-b border-[var(--line)] py-12 lg:py-16">
+          <div class="lg:pr-12">
+            <h2 class="section-title">Research</h2>
+            <p class="section-intro mt-4">
+              I study the emergence of reproductive isolation between evolutionary lineages.
+              Most of my work starts from population genomic data, but the broader aim is
+              comparative: to understand why some groups accumulate barriers to gene flow
+              faster than others.
+            </p>
+          </div>
+
+          <div class="mt-8 grid gap-4 md:grid-cols-3 lg:mt-10 lg:gap-5">
+            <article
+              class="rounded-xl border border-[var(--line)] bg-[var(--card)]/80 p-5 md:col-span-1"
+            >
+              <h3 class="text-base font-semibold tracking-tight text-[var(--green)]">
+                Speciation genomics
+              </h3>
+              <p class="mt-3 text-sm leading-6 text-[var(--muted)]">
+                I use genomic data to estimate how genetic connectivity decreases along the
+                continuum from populations to species, and to identify the demographic
+                histories that shape this transition.
+              </p>
+            </article>
+
+            <article
+              class="rounded-xl border border-[var(--line)] bg-[var(--card)]/80 p-5 md:col-span-1"
+            >
+              <h3 class="text-base font-semibold tracking-tight text-[var(--green)]">
+                Methods and inference
+              </h3>
+              <p class="mt-3 text-sm leading-6 text-[var(--muted)]">
+                I develop and use statistical tools for demographic inference, especially
+                approximate Bayesian computation frameworks designed to compare alternative
+                models of divergence and gene flow.
+              </p>
+            </article>
+
+            <article
+              class="rounded-xl border border-[var(--line)] bg-[var(--card)]/80 p-5 md:col-span-1"
+            >
+              <h3 class="text-base font-semibold tracking-tight text-[var(--green)]">
+                Comparative synthesis
+              </h3>
+              <p class="mt-3 text-sm leading-6 text-[var(--muted)]">
+                I am interested in large-scale comparisons across species pairs, clades, and
+                biological systems, with the aim of connecting population-scale processes to
+                broader evolutionary patterns.
+              </p>
+            </article>
+          </div>
+        </section>
+
+        <!-- Current questions -->
+        <section class="border-b border-[var(--line)] py-12 lg:py-16">
+          <div class="grid gap-8 lg:grid-cols-[0.9fr_1.1fr] lg:gap-10">
+            <div>
+              <h2 class="section-title">Current questions</h2>
+              <p class="mt-4 max-w-xl text-base leading-7 text-[var(--muted)] md:text-[1.0625rem]">
+                A central question in my current work is why plants appear to establish
+                reproductive barriers faster than animals. This result emerged from a large
+                comparative analysis of genomic data across hundreds of species pairs and now
+                opens a broader research program: identifying the biological mechanisms that
+                accelerate or slow down the accumulation of barriers to gene flow.
+              </p>
+            </div>
+
+            <div class="flex flex-col gap-6">
+              <blockquote
+                class="border-l-2 border-[var(--ochre)] pl-5 text-lg font-medium leading-snug tracking-tight md:text-xl"
+              >
+                Can population-scale dynamics of reproductive isolation help explain
+                macroevolutionary differences in diversification?
+              </blockquote>
+
+              <ul class="flex flex-col gap-3.5" role="list">
+                <li class="question-line">
+                  How does gene flow decline with molecular divergence?
+                </li>
+                <li class="question-line">
+                  Which genomic compartments contribute to reproductive isolation?
+                </li>
+                <li class="question-line">
+                  Are plant-specific features, including cytoplasmic genomes, involved in
+                  faster barrier accumulation?
+                </li>
+                <li class="question-line">
+                  Can comparative population genomics provide quantitative links between
+                  microevolution and macroevolution?
+                </li>
+              </ul>
+            </div>
+          </div>
+        </section>
+
+        <!-- Selected work -->
+        <section id="work" class="scroll-mt-8 border-b border-[var(--line)] py-12 lg:py-16">
+          <h2 class="section-title">Selected work</h2>
+
+          <div class="mt-8 flex flex-col divide-y divide-[var(--line)]">
+            <article class="py-6 first:pt-0 lg:py-7">
+              <h3 class="text-[0.95rem] font-semibold leading-snug md:text-base">
+                François Monnet, Zoé Postel, Pascal Touzet, Christelle Fraïsse, Yves Van de
+                Peer, Xavier Vekemans &amp; Camille Roux. 2025.
+                <a
+                  href="https://www.science.org/doi/abs/10.1126/science.adl2356"
+                  class="text-[var(--green)] underline decoration-[var(--line)] underline-offset-4 transition-colors hover:decoration-[var(--green)]"
+                  >Rapid establishment of species barriers in plants compared with that in
+                  animals.</a
+                >
+                <span class="font-normal text-[var(--muted)]">Science.</span>
+              </h3>
+              <p class="mt-2.5 max-w-3xl text-sm leading-6 text-[var(--muted)]">
+                A comparative population genomic analysis showing that, for a given level of
+                molecular divergence, plant species pairs are less genetically connected than
+                animal species pairs.
+              </p>
+            </article>
+
+            <article class="py-6 lg:py-7">
+              <h3 class="text-[0.95rem] font-semibold leading-snug md:text-base">
+                Yannick Juvé et al. 2025.
+                <a
+                  href="https://www.nature.com/articles/s41586-025-09425-w"
+                  class="text-[var(--green)] underline decoration-[var(--line)] underline-offset-4 transition-colors hover:decoration-[var(--green)]"
+                  >One mother for two species via obligate cross-species cloning in ants.</a
+                >
+                <span class="font-normal text-[var(--muted)]">Nature.</span>
+              </h3>
+              <p class="mt-2.5 max-w-3xl text-sm leading-6 text-[var(--muted)]">
+                A collaborative study on an unusual reproductive system in ants, connecting
+                hybridization, clonality, and species boundaries.
+              </p>
+            </article>
+
+            <article class="py-6 lg:py-7">
+              <h3 class="text-[0.95rem] font-semibold leading-snug md:text-base">
+                Christelle Fraïsse et al. 2021.
+                <span class="text-[var(--foreground)]"
+                  >DILS: Demographic inferences with linked selection by using ABC.</span
+                >
+                <span class="font-normal text-[var(--muted)]">Molecular Ecology Resources.</span>
+              </h3>
+              <p class="mt-2.5 max-w-3xl text-sm leading-6 text-[var(--muted)]">
+                A method and software framework to compare demographic models, estimate gene
+                flow, and account for linked selection in population genomic data.
+              </p>
+            </article>
+
+            <article class="py-6 lg:py-7">
+              <h3 class="text-[0.95rem] font-semibold leading-snug md:text-base">
+                Camille Roux et al. 2016.
+                <span class="text-[var(--foreground)]"
+                  >Shedding Light on the Grey Zone of Speciation along a Continuum of Genomic
+                  Divergence.</span
+                >
+                <span class="font-normal text-[var(--muted)]">PLOS Biology.</span>
+              </h3>
+              <p class="mt-2.5 max-w-3xl text-sm leading-6 text-[var(--muted)]">
+                A conceptual and empirical contribution to thinking about speciation as a
+                continuum rather than a binary transition.
+              </p>
+            </article>
+
+            <article class="pb-0 pt-6 lg:py-7">
+              <h3 class="text-[0.95rem] font-semibold leading-snug md:text-base">
+                Camille Roux, Alice Ha, Arthur Weyna, Morgan Lodé &amp; Jonathan Romiguier.
+                2024.
+                <span class="text-[var(--foreground)]"
+                  >The impact of social complexity on the efficacy of natural selection in
+                  termites.</span
+                >
+                <span class="font-normal text-[var(--muted)]">Peer Community Journal.</span>
+              </h3>
+              <p class="mt-2.5 max-w-3xl text-sm leading-6 text-[var(--muted)]">
+                A comparative molecular evolution study asking how social organization affects
+                the efficacy of natural selection.
+              </p>
+            </article>
+          </div>
+        </section>
+
+        <!-- Tools and approaches -->
+        <section class="border-b border-[var(--line)] py-12 lg:py-16">
+          <div class="grid gap-8 lg:grid-cols-[1fr_1.1fr] lg:items-start lg:gap-12">
+            <div>
+              <h2 class="section-title">Tools and approaches</h2>
+              <p class="mt-4 max-w-md text-base leading-7 text-[var(--muted)]">
+                I like tools that make biological questions testable. Method development is
+                not separate from empirical work in my research; it is often the way to turn
+                vague evolutionary questions into measurable quantities.
+              </p>
+            </div>
+
+            <ul
+              class="grid grid-cols-2 gap-2.5 sm:grid-cols-3 lg:gap-3"
+              role="list"
+            >
+              {
+                [
+                  "DILS",
+                  "ABC inference",
+                  "Population genomics",
+                  "Comparative datasets",
+                  "Simulations",
+                  "Phylogenetic thinking",
+                  "Meta-analysis",
+                  "Reproductive isolation",
+                ].map((tool) => (
+                  <li
+                    class="rounded-lg border border-[var(--line)] bg-[var(--card)]/70 px-3 py-2 text-center text-sm tracking-tight text-[var(--foreground)]"
+                  >
+                    {tool}
+                  </li>
+                ))
+              }
+            </ul>
+          </div>
+        </section>
+
+        <!-- ERC direction -->
+        <section class="border-b border-[var(--line)] py-12 lg:py-16">
+          <div class="max-w-3xl lg:ml-auto lg:max-w-2xl lg:pr-4">
+            <p class="text-sm uppercase tracking-[0.25em] text-[var(--ochre)]">
+              ERC direction
+            </p>
+            <h2 class="section-title mt-3">
+              Toward a comparative theory of reproductive barrier accumulation
+            </h2>
+            <p class="mt-4 text-base leading-7 text-[var(--muted)]">
+              The ERC project I am preparing will build on comparative population genomics,
+              statistical modelling, and experimental perspectives to understand why
+              reproductive barriers accumulate faster in some lineages than in others. The aim
+              is not only to document patterns of gene flow, but to identify the biological
+              features that make the origin of species more or less likely.
+            </p>
+          </div>
+        </section>
+
+        <!-- Scientific life -->
+        <section class="border-b border-[var(--line)] py-12 lg:py-16">
+          <div class="max-w-2xl">
+            <h2 class="section-title">Scientific life</h2>
+            <p class="mt-4 text-base leading-7 text-[var(--muted)]">
+              I value collaborative scientific spaces: journal clubs, student discussions,
+              method-oriented workshops, and conferences designed for exchange rather than
+              display. My work has grown through collaborations across population genomics,
+              molecular evolution, phylogenetics, and comparative biology.
+            </p>
+          </div>
+        </section>
+
+        <!-- Contact -->
+        <section id="contact" class="scroll-mt-8 py-12 lg:py-16">
+          <div class="grid gap-8 lg:grid-cols-2 lg:gap-12">
+            <div>
+              <h2 class="section-title">Contact</h2>
+              <address class="mt-5 not-italic text-base leading-7">
+                <p class="font-semibold text-[var(--foreground)]">Camille Roux</p>
+                <p class="mt-1 text-[var(--muted)]">CNRS researcher</p>
+                <p class="text-[var(--muted)]">
+                  Institut des Sciences de l'Évolution de Montpellier
+                </p>
+                <p class="text-[var(--muted)]">Montpellier, France</p>
+              </address>
+            </div>
+
+            <ul class="flex flex-col gap-3 text-[0.95rem] lg:pt-6" role="list">
+              <li>
+                <span class="text-xs uppercase tracking-[0.2em] text-[var(--muted)]"
+                  >Google Scholar</span
+                >
+                <a
+                  href="https://scholar.google.com/citations?user=QppHnSsAAAAJ&hl=fr&oi=ao"
+                  class="mt-1 block text-[var(--green)] underline decoration-[var(--line)] underline-offset-4 transition-colors hover:decoration-[var(--green)]"
+                  >scholar.google.com</a
+                >
+              </li>
+              <li>
+                <span class="text-xs uppercase tracking-[0.2em] text-[var(--muted)]"
+                  >ISEM profile</span
+                >
+                <a
+                  href="https://isem-evolution.fr/membre/roux/"
+                  class="mt-1 block text-[var(--green)] underline decoration-[var(--line)] underline-offset-4 transition-colors hover:decoration-[var(--green)]"
+                  >isem-evolution.fr</a
+                >
+              </li>
+              <li>
+                <span class="text-xs uppercase tracking-[0.2em] text-[var(--muted)]"
+                  >Science article</span
+                >
+                <a
+                  href="https://www.science.org/doi/abs/10.1126/science.adl2356"
+                  class="mt-1 block text-[var(--green)] underline decoration-[var(--line)] underline-offset-4 transition-colors hover:decoration-[var(--green)]"
+                  >science.org — plants vs animals</a
+                >
+              </li>
+              <li>
+                <span class="text-xs uppercase tracking-[0.2em] text-[var(--muted)]"
+                  >Nature article</span
+                >
+                <a
+                  href="https://www.nature.com/articles/s41586-025-09425-w"
+                  class="mt-1 block text-[var(--green)] underline decoration-[var(--line)] underline-offset-4 transition-colors hover:decoration-[var(--green)]"
+                  >nature.com — cross-species cloning in ants</a
+                >
+              </li>
+            </ul>
+          </div>
+        </section>
+      </div>
+    </main>
+  </body>
 </html>
