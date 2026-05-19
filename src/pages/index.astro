@@ -1,55 +1,13 @@
 ---
-import "../styles/global.css";
+import BaseLayout from "../layouts/BaseLayout.astro";
+import SiteHeader from "../components/SiteHeader.astro";
 ---
 
-<html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width" />
-    <title>Camille Roux — Evolutionary Biology</title>
-    <meta
-      name="description"
-      content="Camille Roux, CNRS researcher at ISEM: speciation, reproductive barriers, gene flow, comparative population genomics, and demographic inference."
-    />
-  </head>
+<BaseLayout title="Camille Roux — Evolutionary Biology">
+  <div class="mx-auto flex max-w-6xl flex-col">
+    <SiteHeader current="home" />
 
-  <body>
-    <div class="page-motif" aria-hidden="true"></div>
-
-    <main class="page-content min-h-screen px-6 py-7 md:px-12 lg:px-20">
-      <div class="mx-auto flex max-w-6xl flex-col">
-        <!-- Header -->
-        <header
-          class="flex flex-col gap-4 border-b border-[var(--line)] pb-4 sm:flex-row sm:items-end sm:justify-between"
-        >
-          <div>
-            <p class="text-sm uppercase tracking-[0.25em] text-[var(--green)]">
-              CNRS · ISEM · Montpellier
-            </p>
-            <h1 class="mt-2 text-4xl font-semibold tracking-tight md:text-5xl">
-              Camille Roux
-            </h1>
-          </div>
-
-          <nav
-            class="flex flex-wrap gap-x-6 gap-y-2 text-sm text-[var(--muted)] md:justify-end"
-          >
-            <a href="#research" class="transition-colors hover:text-[var(--foreground)]"
-              >Research</a
-            >
-            <a href="#questions" class="transition-colors hover:text-[var(--foreground)]"
-              >Questions</a
-            >
-            <a href="#work" class="transition-colors hover:text-[var(--foreground)]"
-              >Selected work</a
-            >
-            <a href="#contact" class="transition-colors hover:text-[var(--foreground)]"
-              >Contact</a
-            >
-          </nav>
-        </header>
-
-        <!-- Hero -->
+    <!-- Hero -->
         <section
           class="grid gap-7 border-b border-[var(--line)] py-10 lg:grid-cols-[1.2fr_0.8fr] lg:items-end lg:py-14"
         >
@@ -366,7 +324,5 @@ import "../styles/global.css";
             </ul>
           </div>
         </section>
-      </div>
-    </main>
-  </body>
-</html>
+  </div>
+</BaseLayout>

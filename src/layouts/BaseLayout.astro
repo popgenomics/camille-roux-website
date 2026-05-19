@@ -1,0 +1,30 @@
+---
+import "../styles/global.css";
+
+interface Props {
+  title: string;
+  description?: string;
+}
+
+const {
+  title,
+  description = "Camille Roux, CNRS researcher at ISEM: speciation, reproductive barriers, gene flow, comparative population genomics, and demographic inference.",
+} = Astro.props;
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+  </head>
+  <body>
+    <div class="page-motif" aria-hidden="true"></div>
+
+    <main class="page-content min-h-screen px-6 py-7 md:px-12 lg:px-20">
+      <slot />
+    </main>
+  </body>
+</html>

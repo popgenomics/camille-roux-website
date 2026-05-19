@@ -1,0 +1,51 @@
+---
+import { mainNav, isNavActive, type NavKey } from "../config/nav";
+
+interface Props {
+  /** Page-level active state for top-level routes (home, work, people). */
+  current?: Extract<NavKey, "home" | "work" | "people">;
+}
+
+const { current } = Astro.props;
+const pathname = Astro.url.pathname;
+
+function linkIsActive(key: NavKey): boolean {
+  if (current && (key === "home" || key === "work" || key === "people")) {
+    return key === current;
+  }
+  return isNavActive(key, pathname);
+}
+---
+
+<header
+  class="flex flex-col gap-4 border-b border-[var(--line)] pb-4 sm:flex-row sm:items-end sm:justify-between"
+>
+  <div>
+    <p class="text-sm uppercase tracking-[0.25em] text-[var(--green)]">
+      CNRS · ISEM · Montpellier
+    </p>
+    <h1 class="mt-2 text-4xl font-semibold tracking-tight md:text-5xl">
+      <a href="/" class="transition-colors hover:text-[var(--green)]">Camille Roux</a>
+    </h1>
+  </div>
+
+  <nav
+    class="flex flex-wrap gap-x-6 gap-y-2 text-sm text-[var(--muted)] md:justify-end"
+    aria-label="Main"
+  >
+    {
+      mainNav.map(({ key, label, href }) => (
+        <a
+          href={href}
+          class:list={[
+            "transition-colors hover:text-[var(--foreground)]",
+            linkIsActive(key) && "text-[var(--foreground)]",
+          ]}
+          aria-current={linkIsActive(key) ? "page" : undefined}
+        >
+          {label}
+        </a>
+      ))
+    }
+  </nav>
+</header>

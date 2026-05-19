@@ -1,0 +1,24 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import SiteHeader from "../components/SiteHeader.astro";
+---
+
+<BaseLayout
+  title="Work — Camille Roux"
+  description="Research projects by Camille Roux: speciation, population genomics, and comparative analyses."
+>
+  <div class="mx-auto flex max-w-6xl flex-col">
+    <SiteHeader current="work" />
+
+    <section class="py-12 lg:py-16">
+      <h1 class="section-title">Work</h1>
+      <p class="section-intro mt-4 max-w-2xl">
+        This page will gather past and ongoing research projects, with short summaries, key
+        papers, and illustrative figures.
+      </p>
+      <p class="mt-8 max-w-xl text-sm leading-6 text-[var(--muted)]">
+        Project entries will be added here as they are prepared.
+      </p>
+    </section>
+  </div>
+</BaseLayout>
