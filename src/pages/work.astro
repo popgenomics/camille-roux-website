@@ -1,24 +1,143 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
 import SiteHeader from "../components/SiteHeader.astro";
+import { workEntries, roleLabels } from "../data/work";
+import { radiaspe } from "../data/radiaspe";
 ---
 
 <BaseLayout
   title="Work — Camille Roux"
-  description="Research projects by Camille Roux: speciation, population genomics, and comparative analyses."
+  description="Research projects and selected past work by Camille Roux: speciation, gene flow, and population genomics."
 >
   <div class="mx-auto flex max-w-6xl flex-col">
     <SiteHeader current="work" />
 
-    <section class="py-12 lg:py-16">
-      <h1 class="section-title">Work</h1>
-      <p class="section-intro mt-4 max-w-2xl">
-        This page will gather past and ongoing research projects, with short summaries, key
-        papers, and illustrative figures.
-      </p>
-      <p class="mt-8 max-w-xl text-sm leading-6 text-[var(--muted)]">
-        Project entries will be added here as they are prepared.
-      </p>
+    <nav
+      class="work-section-nav border-b border-[var(--line)] py-8 lg:py-10"
+      aria-label="Work sections"
+    >
+      <a href="#ongoing" class="work-section-nav__link">Ongoing research</a>
+      <span class="work-section-nav__sep" aria-hidden="true">·</span>
+      <a href="#past" class="work-section-nav__link">Past research</a>
+    </nav>
+
+    <section id="ongoing" class="scroll-mt-8 border-b border-[var(--line)] py-12 lg:py-16">
+      <h2 class="section-title">Ongoing research</h2>
+
+      <article class="project-feature mt-8">
+        <p class="work-meta">{radiaspe.funding}</p>
+        <h3 class="project-feature__title">{radiaspe.title}</h3>
+
+        <p class="project-feature__question">{radiaspe.question}</p>
+        <p class="project-feature__summary">{radiaspe.summary}</p>
+
+        <h4 class="project-feature__subtitle">Biological systems</h4>
+        <div class="model-grid">
+          {
+            radiaspe.models.map((model) => (
+              <figure class="model-card">
+                <div class="model-card__image-wrap">
+                  <img
+                    src={model.image}
+                    alt={model.alt}
+                    width="480"
+                    height="360"
+                    loading="lazy"
+                    decoding="async"
+                  />
+                </div>
+                <figcaption>
+                  <p class="model-card__name">{model.name}</p>
+                  <p class="model-card__text">{model.description}</p>
+                </figcaption>
+              </figure>
+            ))
+          }
+        </div>
+
+        <div class="wp-grid">
+          {
+            radiaspe.workPackages.map((wp) => (
+              <div class="wp-card">
+                <p class="wp-card__title">{wp.title}</p>
+                <p class="wp-card__text">{wp.description}</p>
+              </div>
+            ))
+          }
+        </div>
+
+        <h4 class="project-feature__subtitle">Participants</h4>
+        <ul class="project-participants" role="list">
+          {
+            radiaspe.participants.map((person) => (
+              <li>
+                {person.url ? (
+                  <a href={person.url} target="_blank" rel="noopener noreferrer">
+                    {person.name}
+                  </a>
+                ) : (
+                  <span class="project-participants__name">{person.name}</span>
+                )}
+                <span class="project-participants__affiliation">{person.affiliation}</span>
+              </li>
+            ))
+          }
+        </ul>
+      </article>
+    </section>
+
+    <section id="past" class="scroll-mt-8 py-12 lg:py-16">
+      <h2 class="section-title">Past research</h2>
+
+      <div class="work-list mt-8">
+        {
+          workEntries.map((entry, index) => (
+            <article
+              id={entry.slug}
+              class:list={[
+                "work-entry",
+                index % 2 === 1 && "work-entry--reverse",
+              ]}
+            >
+              <figure class="work-figure">
+                <img
+                  src={entry.image}
+                  alt={entry.alt}
+                  width="640"
+                  height="480"
+                  loading={index < 2 ? "eager" : "lazy"}
+                  decoding="async"
+                />
+              </figure>
+
+              <div class="work-body">
+                <p class="work-meta">
+                  <span class="work-year">{entry.year}</span>
+                  <span aria-hidden="true"> · </span>
+                  <span>{entry.journal}</span>
+                  {entry.type === "book-chapter" && (
+                    <span class="work-tag">Book chapter</span>
+                  )}
+                </p>
+
+                <h3 class="work-title">
+                  <a
+                    href={entry.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    {entry.title}
+                  </a>
+                </h3>
+
+                <p class="work-role">{roleLabels[entry.role]}</p>
+
+                <p class="work-description">{entry.description}</p>
+              </div>
+            </article>
+          ))
+        }
+      </div>
     </section>
   </div>
 </BaseLayout>

@@ -1,24 +1,53 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
 import SiteHeader from "../components/SiteHeader.astro";
+import { peopleLevels } from "../data/people";
 ---
 
 <BaseLayout
   title="People — Camille Roux"
-  description="Students, postdocs, and collaborators in the research group of Camille Roux at ISEM."
+  description="Students and postdocs supervised by Camille Roux at ISEM and collaborating institutions."
 >
   <div class="mx-auto flex max-w-6xl flex-col">
     <SiteHeader current="people" />
 
-    <section class="py-12 lg:py-16">
+    <section class="border-b border-[var(--line)] py-12 lg:py-14">
       <h1 class="section-title">People</h1>
       <p class="section-intro mt-4 max-w-2xl">
-        This page will list students, postdocs, collaborators, and former trainees involved
-        in my research projects.
-      </p>
-      <p class="mt-8 max-w-xl text-sm leading-6 text-[var(--muted)]">
-        Group members and alumni will be listed here as the page is developed.
+        Students and trainees I have supervised or co-supervised, grouped by level.
       </p>
     </section>
+
+    <div class="people-levels">
+      {
+        peopleLevels.map((level) => (
+          <section class="people-group" id={level.id}>
+            <h2 class="people-group__title">{level.title}</h2>
+
+            {level.entries.length > 0 ? (
+              <ul class="people-list" role="list">
+                {level.entries.map((entry) => (
+                  <li class="people-entry">
+                    <p class="people-entry__head">
+                      <span class="people-entry__period">{entry.period}</span>
+                      <span class="people-entry__name">{entry.name}</span>
+                      {entry.programme && (
+                        <span class="people-entry__programme">{entry.programme}</span>
+                      )}
+                    </p>
+                    <p class="people-entry__supervisors">
+                      {level.title === "Post-doctorat" ? "Supervisor" : "Supervisors"}:{" "}
+                      {entry.supervisors}
+                    </p>
+                  </li>
+                ))}
+              </ul>
+            ) : (
+              <p class="people-group__empty">{level.emptyNote}</p>
+            )}
+          </section>
+        ))
+      }
+    </div>
   </div>
 </BaseLayout>
