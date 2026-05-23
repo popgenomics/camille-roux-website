@@ -7,97 +7,98 @@ import SiteHeader from "../components/SiteHeader.astro";
   <div class="mx-auto flex max-w-6xl flex-col">
     <SiteHeader current="home" />
 
-    <!-- Hero -->
+    <!-- Presentation -->
         <section
-          class="grid gap-7 border-b border-[var(--line)] py-10 lg:grid-cols-[1.2fr_0.8fr] lg:items-end lg:py-14"
+          id="presentation"
+          class="border-b border-[var(--line)] py-10 lg:py-14"
         >
-          <div>
-            <p
-              class="max-w-3xl text-3xl font-medium leading-tight tracking-tight md:text-4xl lg:text-[2.65rem]"
-            >
-              I study how reproductive barriers emerge, accumulate, and shape the formation
-              of species.
-            </p>
+          <h2 class="section-title">Presentation</h2>
 
-            <p class="mt-5 max-w-2xl text-base leading-7 text-[var(--muted)] md:text-lg">
-              My work seeks to understand the dynamics of the speciation process: when the first
-              barriers to gene flow arise, and when genomes eventually become fully impermeable
-              to gene flow. To address these questions, I combine population genomics, demographic
-              inference, and comparative analyses.
+          <div class="presentation-block presentation-narrative">
+            <p>
+              My scientific path started in Lille, where I completed my PhD with Xavier Vekemans
+              and Vincent Castric between 2007 and 2010, in the laboratory of Genetics and
+              Evolution of Plant Populations. The work focused on speciation in <em>Arabidopsis</em>,
+              especially between <em>A. halleri</em> and <em>A. lyrata</em>, and on the evolution of
+              heavy-metal accumulation. We showed that divergence between these species coincided
+              with a major tandem triplication involved in the ability of <em>A. halleri</em> to
+              hyperaccumulate zinc.
+            </p>
+            <p>
+              A second line of the PhD examined the genomic consequences of balancing selection
+              around the self-incompatibility locus, one of the strongest known examples of
+              long-term balancing selection. Despite this intense selection, its genomic footprint
+              remained highly localized.
+            </p>
+            <p>
+              I then joined the Institut des Sciences de l'Évolution de Montpellier for a postdoc
+              with Nicolas Bierne and Nicolas Galtier (2011–2013), based at the marine station in
+              Sète. There, the main focus was a striking case of introgression between two
+              <em>Ciona</em> species that remain able to produce viable and fertile hybrids despite
+              being roughly fourteen times more divergent than humans and chimpanzees.
+            </p>
+            <p>
+              From 2013 to 2016, I worked in Lausanne with John Pannell, first on methodological
+              approaches for high-throughput sequencing data in polyploids, then on how plant
+              metapopulation dynamics shape the evolution of reproductive systems. Since 2017, I
+              have been a CNRS researcher, in Lille until 2025 and now at ISEM in Montpellier.
             </p>
           </div>
 
-          <div
-            class="rounded-2xl border border-[var(--line)] bg-[var(--card)]/90 p-5 shadow-sm backdrop-blur-sm md:p-6 lg:translate-y-1"
-          >
-            <p class="text-sm uppercase tracking-[0.25em] text-[var(--ochre)]">
-              Working themes
-            </p>
-            <p class="mt-3 text-sm leading-relaxed text-[var(--muted)]">
-              Tracing gene flow along the speciation continuum, comparing patterns across
-              lineages and clades, and developing inference tools (including{" "}
-              <a
-                href="https://github.com/popgenomics/DILS"
-                class="text-[var(--green)] underline decoration-[var(--line)] underline-offset-4 transition-colors hover:decoration-[var(--green)]"
-                >DILS</a
-              >) to test demographic models of divergence with gene flow.
-            </p>
+          <div class="presentation-block places-strip" aria-label="Places along this path">
+            <figure class="place-card">
+              <div class="place-card__image">
+                <img
+                  src="/images/cities/lille.png"
+                  alt="Lille"
+                  width="320"
+                  height="240"
+                  loading="lazy"
+                  decoding="async"
+                />
+              </div>
+              <figcaption>Lille</figcaption>
+            </figure>
+            <figure class="place-card">
+              <div class="place-card__image">
+                <img
+                  src="/images/cities/sete.jpg"
+                  alt="Sète"
+                  width="320"
+                  height="240"
+                  loading="lazy"
+                  decoding="async"
+                />
+              </div>
+              <figcaption>Sète</figcaption>
+            </figure>
+            <figure class="place-card">
+              <div class="place-card__image">
+                <img
+                  src="/images/cities/lausanne.jpeg"
+                  alt="Lausanne"
+                  width="320"
+                  height="240"
+                  loading="lazy"
+                  decoding="async"
+                />
+              </div>
+              <figcaption>Lausanne</figcaption>
+            </figure>
           </div>
-        </section>
 
-        <!-- Current questions -->
-        <section
-          id="questions"
-          class="scroll-mt-8 border-b border-[var(--line)] py-12 lg:py-16"
-        >
-          <h2 class="section-title">Current questions</h2>
-          <p class="section-intro mt-4 max-w-3xl">
-            A recent comparative analysis across hundreds of species pairs (<a
-              href="https://www.science.org/doi/abs/10.1126/science.adl2356"
-              class="text-[var(--green)] underline decoration-[var(--line)] underline-offset-4 transition-colors hover:decoration-[var(--green)]"
-              >Science, 2025</a
-            >) suggests that reproductive barriers accumulate faster in plants than in animals:
-            at comparable molecular divergence, plant lineages tend to be less genetically
-            connected. That finding is one anchor for current work, not the whole program, but
-            a starting point for asking which biological features accelerate or slow barrier
-            accumulation.
+          <p class="presentation-block presentation-focus">
+            My work seeks to understand the dynamics of the speciation process: when the first
+            barriers to gene flow arise, and when genomes eventually become fully impermeable to
+            gene flow. To address these questions, I combine population genomics, demographic
+            inference, and comparative analyses.
           </p>
 
-          <ul class="mt-8 flex max-w-3xl flex-col gap-3.5" role="list">
-            <li class="question-line">
-              Why do lineages differ in the rate at which barriers to gene flow accumulate?
-            </li>
-            <li class="question-line">
-              How does genetic connectivity decline with molecular divergence?
-            </li>
-            <li class="question-line">
-              Which genomic compartments and biological features contribute to reproductive
-              isolation?
-            </li>
-            <li class="question-line">
-              Can population-scale estimates of reproductive isolation be compared across
-              clades?
-            </li>
-            <li class="question-line">
-              Do evolutionary radiations coincide with faster declines in gene flow between
-              closely related species?
-            </li>
-          </ul>
-        </section>
+          <p class="presentation-block text-sm text-[var(--muted)] max-w-3xl">
+            This work currently develops along three connected axes.
+          </p>
 
-        <!-- Research -->
-        <section id="research" class="scroll-mt-8 border-b border-[var(--line)] py-12 lg:py-16">
-          <div class="lg:pr-12">
-            <h2 class="section-title">Research</h2>
-            <p class="section-intro mt-4">
-              Most of my work starts from population genomic data and asks how gene flow
-              declines along the speciation continuum, from population pairs to diverged
-              lineages, and which demographic histories and genomic features shape that
-              transition.
-            </p>
-          </div>
-
-          <div class="mt-8 grid gap-4 md:grid-cols-3 lg:mt-10 lg:gap-5">
+          <div class="presentation-block grid gap-4 md:grid-cols-3 lg:gap-5">
             <article
               class="rounded-xl border border-[var(--line)] bg-[var(--card)]/80 p-5 md:col-span-1"
             >
@@ -105,8 +106,8 @@ import SiteHeader from "../components/SiteHeader.astro";
                 Speciation genomics
               </h3>
               <p class="mt-3 text-sm leading-6 text-[var(--muted)]">
-                Estimating genetic connectivity and reproductive isolation from genomic
-                data, including along the grey zone between populations and species.
+                Estimating genetic connectivity and reproductive isolation from genomic data,
+                especially along the grey zone between populations and species.
               </p>
             </article>
 
@@ -117,14 +118,8 @@ import SiteHeader from "../components/SiteHeader.astro";
                 Methods and inference
               </h3>
               <p class="mt-3 text-sm leading-6 text-[var(--muted)]">
-                Developing and applying ABC-based tools (including{" "}
-                <a
-                  href="https://github.com/popgenomics/DILS"
-                  class="text-[var(--green)] underline decoration-[var(--line)] underline-offset-4 transition-colors hover:decoration-[var(--green)]"
-                  >DILS</a
-                >) to compare
-                demographic models of divergence, estimate gene flow, and account for linked
-                selection.
+                Developing and applying ABC-based tools such as DILS to compare models of
+                divergence, estimate gene flow, and account for linked selection.
               </p>
             </article>
 
@@ -135,10 +130,45 @@ import SiteHeader from "../components/SiteHeader.astro";
                 Comparative approaches
               </h3>
               <p class="mt-3 text-sm leading-6 text-[var(--muted)]">
-                Comparing species pairs and clades to learn whether, and why, reproductive
-                isolation accumulates at different rates across biological systems.
+                Comparing species pairs and clades to ask whether reproductive isolation
+                accumulates at different rates across biological systems.
               </p>
             </article>
+          </div>
+
+          <div class="presentation-block">
+            <h3 class="presentation-subtitle">Current questions</h3>
+            <p class="section-intro mt-3 max-w-3xl">
+              A recent comparative analysis across hundreds of species pairs (<a
+                href="https://www.science.org/doi/abs/10.1126/science.adl2356"
+                class="text-[var(--green)] underline decoration-[var(--line)] underline-offset-4 transition-colors hover:decoration-[var(--green)]"
+                >Science, 2025</a
+              >) found that plant lineages tend to be less genetically connected than animal
+              lineages at comparable molecular divergence. That result is one anchor for ongoing
+              work, and a starting point for asking which biological features accelerate or slow
+              barrier accumulation.
+            </p>
+
+            <ul class="mt-6 flex max-w-3xl flex-col gap-3" role="list">
+              <li class="question-line">
+                Why do lineages differ in the rate at which barriers to gene flow accumulate?
+              </li>
+              <li class="question-line">
+                How does genetic connectivity decline with molecular divergence?
+              </li>
+              <li class="question-line">
+                Which genomic compartments and biological features contribute to reproductive
+                isolation?
+              </li>
+              <li class="question-line">
+                Can population-scale estimates of reproductive isolation be compared across
+                clades?
+              </li>
+              <li class="question-line">
+                Do evolutionary radiations coincide with faster declines in gene flow between
+                closely related species?
+              </li>
+            </ul>
           </div>
         </section>
 
@@ -148,18 +178,17 @@ import SiteHeader from "../components/SiteHeader.astro";
 
           <div class="mt-8 flex flex-col divide-y divide-[var(--line)]">
             <article class="py-6 first:pt-0 lg:py-7">
-              <h3 class="text-[0.95rem] font-semibold leading-snug md:text-base">
-                François Monnet, Zoé Postel, Pascal Touzet, Christelle Fraïsse, Yves Van de
-                Peer, Xavier Vekemans &amp; Camille Roux. 2025.
+              <p class="work-meta">Science · 2025</p>
+              <h3 class="work-title">
                 <a
                   href="https://doi.org/10.1126/science.adl2356"
-                  class="text-[var(--green)] underline decoration-[var(--line)] underline-offset-4 transition-colors hover:decoration-[var(--green)]"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   >Rapid establishment of species barriers in plants compared with that in
-                  animals.</a
+                  animals</a
                 >
-                <span class="font-normal text-[var(--muted)]">Science.</span>
               </h3>
-              <p class="mt-2.5 max-w-3xl text-sm leading-6 text-[var(--muted)]">
+              <p class="work-description">
                 A comparative population genomic analysis showing that, for a given level of
                 molecular divergence, plant species pairs are less genetically connected than
                 animal species pairs.
@@ -167,69 +196,69 @@ import SiteHeader from "../components/SiteHeader.astro";
             </article>
 
             <article class="py-6 lg:py-7">
-              <h3 class="text-[0.95rem] font-semibold leading-snug md:text-base">
-                Yannick Juvé et al. 2025.
+              <p class="work-meta">PLOS Biology · 2016</p>
+              <h3 class="work-title">
                 <a
-                  href="https://doi.org/10.1038/s41586-025-09425-w"
-                  class="text-[var(--green)] underline decoration-[var(--line)] underline-offset-4 transition-colors hover:decoration-[var(--green)]"
-                  >One mother for two species via obligate cross-species cloning in ants.</a
+                  href="https://doi.org/10.1371/journal.pbio.2000234"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  >Shedding Light on the Grey Zone of Speciation along a Continuum of Genomic
+                  Divergence</a
                 >
-                <span class="font-normal text-[var(--muted)]">Nature.</span>
               </h3>
-              <p class="mt-2.5 max-w-3xl text-sm leading-6 text-[var(--muted)]">
-                A collaborative study on an unusual reproductive system in ants, connecting
-                hybridization, clonality, and species boundaries.
+              <p class="work-description">
+                A conceptual and empirical contribution to thinking about speciation as a
+                continuum rather than a binary transition.
               </p>
             </article>
 
             <article class="py-6 lg:py-7">
-              <h3 class="text-[0.95rem] font-semibold leading-snug md:text-base">
-                Christelle Fraïsse et al. 2021.
+              <p class="work-meta">Molecular Ecology Resources · 2021</p>
+              <h3 class="work-title">
                 <a
                   href="https://doi.org/10.1111/1755-0998.13323"
-                  class="text-[var(--green)] underline decoration-[var(--line)] underline-offset-4 transition-colors hover:decoration-[var(--green)]"
-                  >DILS: Demographic inferences with linked selection by using ABC.</a
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  >DILS: Demographic inferences with linked selection by using ABC</a
                 >
-                <span class="font-normal text-[var(--muted)]">Molecular Ecology Resources.</span>
               </h3>
-              <p class="mt-2.5 max-w-3xl text-sm leading-6 text-[var(--muted)]">
+              <p class="work-description">
                 A method and software framework to compare demographic models, estimate gene
                 flow, and account for linked selection in population genomic data.
               </p>
             </article>
 
             <article class="py-6 lg:py-7">
-              <h3 class="text-[0.95rem] font-semibold leading-snug md:text-base">
-                Camille Roux et al. 2016.
+              <p class="work-meta">Peer Community Journal · 2024</p>
+              <h3 class="work-title">
                 <a
-                  href="https://doi.org/10.1371/journal.pbio.2000234"
-                  class="text-[var(--green)] underline decoration-[var(--line)] underline-offset-4 transition-colors hover:decoration-[var(--green)]"
-                  >Shedding Light on the Grey Zone of Speciation along a Continuum of Genomic
-                  Divergence.</a
+                  href="https://doi.org/10.24072/pcjournal.476"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  >The impact of social complexity on the efficacy of natural selection in
+                  termites</a
                 >
-                <span class="font-normal text-[var(--muted)]">PLOS Biology.</span>
               </h3>
-              <p class="mt-2.5 max-w-3xl text-sm leading-6 text-[var(--muted)]">
-                A conceptual and empirical contribution to thinking about speciation as a
-                continuum rather than a binary transition.
+              <p class="work-description">
+                A comparative molecular evolution study asking how social organization affects
+                the efficacy of natural selection.
               </p>
             </article>
 
             <article class="pb-0 pt-6 lg:py-7">
-              <h3 class="text-[0.95rem] font-semibold leading-snug md:text-base">
-                Camille Roux, Alice Ha, Arthur Weyna, Morgan Lodé &amp; Jonathan Romiguier.
-                2024.
+              <p class="work-meta">Methods in Molecular Biology · 2023</p>
+              <h3 class="work-title">
                 <a
-                  href="https://doi.org/10.24072/pcjournal.476"
-                  class="text-[var(--green)] underline decoration-[var(--line)] underline-offset-4 transition-colors hover:decoration-[var(--green)]"
-                  >The impact of social complexity on the efficacy of natural selection in
-                  termites.</a
+                  href="https://doi.org/10.1007/978-1-0716-2561-3_17"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  >Inferring the Demographic History and Inheritance Mode of Tetraploid Species
+                  Using ABC</a
                 >
-                <span class="font-normal text-[var(--muted)]">Peer Community Journal.</span>
               </h3>
-              <p class="mt-2.5 max-w-3xl text-sm leading-6 text-[var(--muted)]">
-                A comparative molecular evolution study asking how social organization affects
-                the efficacy of natural selection.
+              <p class="work-description">
+                An ABC framework to infer the demographic history, origin, and inheritance mode
+                of tetraploid species from population genomic data.
               </p>
             </article>
           </div>
@@ -237,53 +266,22 @@ import SiteHeader from "../components/SiteHeader.astro";
 
         <!-- Tools and approaches -->
         <section class="border-b border-[var(--line)] py-12 lg:py-16">
-          <div class="grid gap-8 lg:grid-cols-[1fr_1.1fr] lg:items-start lg:gap-12">
-            <div>
-              <h2 class="section-title">Tools and approaches</h2>
-              <p class="mt-4 max-w-md text-base leading-7 text-[var(--muted)]">
-                Method development is part of how I work: tools such as{" "}
-                <a
-                  href="https://github.com/popgenomics/DILS"
-                  class="text-[var(--green)] underline decoration-[var(--line)] underline-offset-4 transition-colors hover:decoration-[var(--green)]"
-                  >DILS</a
-                >{" "}
-                and ABC frameworks turn comparative questions about gene flow and reproductive
-                isolation into quantities that can be estimated and compared across datasets.
-              </p>
-            </div>
-
-            <ul
-              class="grid grid-cols-2 gap-2.5 sm:grid-cols-3 lg:gap-3"
-              role="list"
-            >
-              {
-                [
-                  { label: "DILS", href: "https://github.com/popgenomics/DILS" },
-                  { label: "ABC inference" },
-                  { label: "Population genomics" },
-                  { label: "Comparative datasets" },
-                  { label: "Simulations" },
-                  { label: "Meta-analysis" },
-                  { label: "Reproductive isolation" },
-                ].map((tool) => (
-                  <li
-                    class="rounded-lg border border-[var(--line)] bg-[var(--card)]/70 px-3 py-2 text-center text-sm tracking-tight text-[var(--foreground)]"
-                  >
-                    {tool.href ? (
-                      <a
-                        href={tool.href}
-                        class="text-[var(--green)] underline decoration-[var(--line)] underline-offset-4 transition-colors hover:decoration-[var(--green)]"
-                      >
-                        {tool.label}
-                      </a>
-                    ) : (
-                      tool.label
-                    )}
-                  </li>
-                ))
-              }
-            </ul>
-          </div>
+          <h2 class="section-title">Tools and approaches</h2>
+          <p class="mt-4 max-w-2xl text-base leading-7 text-[var(--muted)]">
+            Method development is part of how I work: ABC-based frameworks turn comparative
+            questions about gene flow and reproductive isolation into quantities that can be
+            estimated and compared across datasets. Code and tools are available on{" "}
+            <a
+              href="https://github.com/popgenomics/"
+              class="text-[var(--green)] underline decoration-[var(--line)] underline-offset-4 transition-colors hover:decoration-[var(--green)]"
+              >GitHub</a
+            >, including{" "}
+            <a
+              href="https://github.com/popgenomics/DILS"
+              class="text-[var(--green)] underline decoration-[var(--line)] underline-offset-4 transition-colors hover:decoration-[var(--green)]"
+              >DILS</a
+            >.
+          </p>
         </section>
 
         <!-- Contact -->
@@ -331,22 +329,12 @@ import SiteHeader from "../components/SiteHeader.astro";
               </li>
               <li>
                 <span class="text-xs uppercase tracking-[0.2em] text-[var(--muted)]"
-                  >Science article</span
+                  >GitHub</span
                 >
                 <a
-                  href="https://www.science.org/doi/abs/10.1126/science.adl2356"
+                  href="https://github.com/popgenomics/"
                   class="mt-1 block text-[var(--green)] underline decoration-[var(--line)] underline-offset-4 transition-colors hover:decoration-[var(--green)]"
-                  >science.org, plants vs animals</a
-                >
-              </li>
-              <li>
-                <span class="text-xs uppercase tracking-[0.2em] text-[var(--muted)]"
-                  >Nature article</span
-                >
-                <a
-                  href="https://www.nature.com/articles/s41586-025-09425-w"
-                  class="mt-1 block text-[var(--green)] underline decoration-[var(--line)] underline-offset-4 transition-colors hover:decoration-[var(--green)]"
-                  >nature.com, cross-species cloning in ants</a
+                  >github.com/popgenomics</a
                 >
               </li>
             </ul>
