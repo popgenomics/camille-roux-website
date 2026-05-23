@@ -2,15 +2,15 @@
 import { mainNav, isNavActive, type NavKey } from "../config/nav";
 
 interface Props {
-  /** Page-level active state for top-level routes (home, work, people). */
-  current?: Extract<NavKey, "home" | "work" | "people">;
+  /** Page-level active state for top-level routes (home, research, people). */
+  current?: Extract<NavKey, "home" | "research" | "people">;
 }
 
 const { current } = Astro.props;
 const pathname = Astro.url.pathname;
 
 function linkIsActive(key: NavKey): boolean {
-  if (current && (key === "home" || key === "work" || key === "people")) {
+  if (current && (key === "home" || key === "research" || key === "people")) {
     return key === current;
   }
   return isNavActive(key, pathname);
